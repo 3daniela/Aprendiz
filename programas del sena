@@ -1,0 +1,67 @@
+class programas  {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        int programa;
+        int modalidad;
+
+        String nombrePrograma = "";
+        String nombreModalidad = "";
+        String duracion = "";
+        String jornada = "";
+
+        System.out.println("=== SELECCIÓN DE PROGRAMA SENA ===");
+        System.out.println("1. ADSO – Análisis y Desarrollo de Software");
+        System.out.println("2. Gestión Empresarial");
+        System.out.println("3. Mantenimiento de Equipos de Cómputo");
+        System.out.print("Elige un programa (1-3): ");
+        programa = sc.nextInt();
+
+        switch (programa) {
+            case 1:
+                nombrePrograma = "ADSO – Análisis y Desarrollo de Software";
+                duracion = "24 meses";
+                jornada = "Mañana o Tarde";
+                break;
+
+            case 2:
+                nombrePrograma = "Gestión Empresarial";
+                duracion = "18 meses";
+                jornada = "Tarde";
+                break;
+
+            case 3:
+                nombrePrograma = "Mantenimiento de Equipos de Cómputo";
+                duracion = "12 meses";
+                jornada = "Mañana";
+                break;
+
+            default:
+                System.out.println("x Error: opción de programa no válida.");
+                return;
+        }
+
+        System.out.println("\nSelecciona la modalidad:");
+        System.out.println("1. Presencial");
+        System.out.println("2. Virtual");
+        System.out.print("Elige una opción: ");
+        modalidad = sc.nextInt();
+
+        if (modalidad == 1) {
+            nombreModalidad = "Presencial";
+        } else if (modalidad == 2) {
+            nombreModalidad = "Virtual";
+        } else {
+            System.out.println("x Error: modalidad no válida.");
+            return;
+        }
+
+        System.out.println("\n=== INFORMACIÓN DEL PROGRAMA ===");
+        System.out.println("Programa: " + nombrePrograma);
+        System.out.println("Modalidad: " + nombreModalidad);
+        System.out.println("Duración estimada: " + duracion);
+        System.out.println("Jornada sugerida: " + jornada);
+
+
+    }
+}
