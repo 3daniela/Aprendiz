@@ -1,0 +1,68 @@
+class PanelCarro {
+    static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("=== PANEL DE CONTROL DEL CARRO ===");
+        System.out.println("1. Encender/Apagar luces");
+        System.out.println("2. Ajustar velocidad");
+        System.out.println("3. Activar modo de conducción");
+        System.out.print("Seleccione una opción (1-3): ");
+        int opcion = sc.nextInt();
+        sc.nextLine(); // limpiar buffer
+
+        switch (opcion) {
+
+            case 1: // Luces
+                System.out.print("¿Desea encender o apagar las luces? ");
+                String accion = sc.nextLine().toLowerCase();
+
+                if (accion.equals("encender"))
+                    System.out.println("Las luces han sido encendidas.");
+                else if (accion.equals("apagar"))
+                    System.out.println("Las luces han sido apagadas.");
+                else
+                    System.out.println("x pción inválida.");
+                break;
+
+            case 2: // Velocidad
+                System.out.print("Ingrese velocidad actual: ");
+                int actual = sc.nextInt();
+
+                System.out.print("Ingrese velocidad objetivo: ");
+                int objetivo = sc.nextInt();
+
+                if (objetivo > actual)
+                    System.out.println(" Acelerando...");
+                else if (objetivo < actual)
+                    System.out.println(" Frenando...");
+                else
+                    System.out.println("✔ Manteniendo velocidad.");
+                break;
+
+            case 3: // Modo de conducción
+                System.out.println("Seleccione modo:");
+                System.out.println("1. Normal");
+                System.out.println("2. Eco");
+                System.out.println("3. Sport");
+                System.out.print("Modo: ");
+                int modo = sc.nextInt();
+
+                if (modo == 1)
+                    System.out.println("Modo Normal: equilibrado para ciudad.");
+                else if (modo == 2)
+                    System.out.println("Modo Eco: ahorro de combustible.");
+                else if (modo == 3)
+                    System.out.println("Modo Sport: mayor potencia y respuesta.");
+                else
+                    System.out.println("x Modo inválido.");
+                break;
+
+            default:
+                System.out.println("x Opción inválida.");
+        }
+    }
+}
+
+
+
