@@ -1,0 +1,73 @@
+class spotify {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        int opcionLista;
+        int tipoLista;
+        String nombreLista = "";
+        String tipo = "";
+        int canciones = 0;
+        String duracion = "";
+
+        do {
+            System.out.println("=== SPOTIFY - SELECCIÓN DE LISTA ===");
+            System.out.println("1. Lista Estudio");
+            System.out.println("2. Lista Entrenamiento");
+            System.out.println("3. Lista Fiesta");
+            System.out.println("4. Salir");
+            System.out.print("Elige una opción: ");
+            opcionLista = sc.nextInt();
+
+            switch (opcionLista) {
+                case 1:
+                    nombreLista = "Estudio";
+                    break;
+                case 2:
+                    nombreLista = "Entrenamiento";
+                    break;
+                case 3:
+                    nombreLista = "Fiesta";
+                    break;
+                case 4:
+                    System.out.println("Saliendo del programa...");
+                    continue; // vuelve al do-while sin pedir tipo de lista
+                default:
+                    System.out.println("x Opción no válida. Intenta nuevamente.");
+                    continue;
+            }
+
+            System.out.println("Selecciona el tipo de lista:");
+            System.out.println("1. Versión corta");
+            System.out.println("2. Versión larga");
+            System.out.print("Elige una opción: ");
+            tipoLista = sc.nextInt();
+
+            if (tipoLista == 1) {
+                tipo = "Corta";
+                canciones = 10;
+                duracion = "30 minutos";
+            } else if (tipoLista == 2) {
+                tipo = "Larga";
+                canciones = 25;
+                duracion = "1 hora 15 minutos";
+            } else {
+                System.out.println("x Tipo de lista no válido.");
+                continue;
+            }
+
+            System.out.println("\n=== RESULTADO DE TU SELECCIÓN ===");
+            System.out.println("Lista: " + nombreLista);
+            System.out.println("Tipo: " + tipo);
+            System.out.println("Número de canciones: " + canciones);
+            System.out.println("Duración estimada: " + duracion);
+            System.out.println();
+
+        } while (opcionLista != 4);
+
+
+    }
+}
+
+
+
+
