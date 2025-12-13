@@ -1,0 +1,61 @@
+class emisora {
+    static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("=== RADIO DEL CARRO ===");
+        System.out.println("1. Emisora Pop");
+        System.out.println("2. Emisora Rock");
+        System.out.println("3. Emisora Vallenato");
+        System.out.print("Seleccione una emisora (1-3): ");
+        int emisora = sc.nextInt();
+
+        System.out.print("Ingrese la hora (0-23): ");
+        int hora = sc.nextInt();
+
+        if (hora < 0 || hora > 23) {
+            System.out.println("x Hora inválida.");
+            return;
+        }
+
+        String nombre = "";
+        String programa = "";
+
+        switch (emisora) {
+            case 1:
+                nombre = "Emisora Pop";
+                if (hora >= 6 && hora < 12) programa = "Pop de la mañana";
+                else if (hora >= 12 && hora < 18) programa = "Éxitos del momento";
+                else if (hora >= 18 && hora < 24) programa = "Noche Pop";
+                else programa = "Sin programación disponible";
+                break;
+
+            case 2:
+                nombre = "Emisora Rock";
+                if (hora >= 6 && hora < 12) programa = "Rock clásico";
+                else if (hora >= 12 && hora < 18) programa = "Rock en español";
+                else if (hora >= 18 && hora < 24) programa = "Rock pesado";
+                else programa = "Sin programación disponible";
+                break;
+
+            case 3:
+                nombre = "Emisora Vallenato";
+                if (hora >= 6 && hora < 12) programa = "Vallenato tradicional";
+                else if (hora >= 12 && hora < 18) programa = "Vallenato moderno";
+                else if (hora >= 18 && hora < 24) programa = "Parranda vallenata";
+                else programa = "Sin programación disponible";
+                break;
+
+            default:
+                System.out.println("x Emisora inválida.");
+                return;
+        }
+
+        System.out.println("\n=== INFORMACIÓN ===");
+        System.out.println("Emisora: " + nombre);
+        System.out.println("Hora: " + hora);
+        System.out.println("Programa: " + programa);
+    }
+}
+
+
