@@ -1,0 +1,52 @@
+import java.util.Scanner;
+
+class AlquilerLavadoras {
+    static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("=== ALQUILER DE LAVADORAS ===");
+        System.out.println("1. Lavadora estándar");
+        System.out.println("2. Lavadora grande");
+        System.out.println("3. Lavadora industrial");
+        System.out.print("Seleccione una opción (1-3): ");
+        int opcion = sc.nextInt();
+
+        // VALIDACIÓN para que no se pase de 1 a 3
+        if (opcion < 1 || opcion > 3) {
+            System.out.println("Error: opción inválida. Debe ser entre 1 y 3.");
+            return;
+        }
+
+        System.out.print("Ingrese el número de horas de alquiler: ");
+        int horas = sc.nextInt();
+
+        // Validación de horas
+        if (horas <= 0) {
+            System.out.println("Error: las horas deben ser mayores a cero.");
+            return;
+        }
+
+        int tarifa = 0;
+        int total = 0;
+
+        tarifa = switch (opcion) {
+            case 1 -> (horas <= 3) ? 5000 : 4000;
+            case 2 -> (horas <= 3) ? 7000 : 6000;
+            case 3 -> (horas <= 3) ? 10000 : 8000;
+            default -> tarifa;
+        };
+
+        total = tarifa * horas;
+
+        System.out.println("\n--- RESUMEN DEL ALQUILER ---");
+        System.out.println("Tipo de lavadora: " + opcion);
+        System.out.println("Horas: " + horas);
+        System.out.println("Tarifa por hora: $" + tarifa);
+        System.out.println("Total a pagar: $" + total);
+    }
+}
+
+
+
+
