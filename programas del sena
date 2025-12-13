@@ -22,7 +22,7 @@ class programas  {
                 nombrePrograma = "ADSO – Análisis y Desarrollo de Software";
                 duracion = "24 meses";
                 jornada = "Mañana o Tarde";
-                break;
+                break;        
 
             case 2:
                 nombrePrograma = "Gestión Empresarial";
